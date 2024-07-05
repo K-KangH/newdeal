@@ -111,6 +111,8 @@
 
 @include tabletMore {
     #header {
+        position: sticky;
+        top: 0;
         .inner {
             display: flex;
             flex-direction: column;

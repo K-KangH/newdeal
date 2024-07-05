@@ -1,0 +1,24 @@
+// 페이지의 공통 영역
+// em단위는 부모요소의 font-size를 기준으로 상대적 크기를 가지는 단위임
+// 밑에 font-test에서 1.176em 에서 밑에서 또 em 을 사용할경우 em에서 다시 배율적용하게됨
+
+// rem단위는 html의 font-size를 기준으로 사용함
+@use 'sass:map';
+
+$sizes: map.get($font-size, 'sizes');
+$title: map.get($sizes, 'title');
+
+.font-test {
+    font-size: 1.1765rem;
+    color: red;
+    span {
+        font-size: unquote(map.get($title, 'xxlg'));
+        font-family: 'NanumSquareNeoLight';
+    }
+}
+
+@include mobileMore {
+    .font-test {
+        color: green;
+    }
+}
